@@ -20,6 +20,7 @@ public class Archive : MonoBehaviour
     
 
     [Header("Artifacts")]
+    private GameObject currentArtifact;
     public GameObject aerialViews;
     public GameObject SanfordRichardsonArtifact;
     public GameObject SanfordObitL;
@@ -31,6 +32,12 @@ public class Archive : MonoBehaviour
     public GameObject oralHistoryMenu;
     public GameObject anitaArnold;
     public GameObject[] anitaArnoldButtons;
+    public GameObject avisMelvaFranklin;
+    public GameObject[] avisMelvaFranklinButtons;
+    public GameObject eloiseCarbajal;
+    public GameObject[] eloiseCarbajalButtons;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -77,6 +84,7 @@ public class Archive : MonoBehaviour
         if (artifact == "SanfordRichardson")
         {
             SanfordRichardsonArtifact.SetActive(true);
+            currentArtifact = SanfordRichardsonArtifact;
             if(activeHand == "Right")
             {
                 SanfordObitR.SetActive(true);
@@ -100,14 +108,17 @@ public class Archive : MonoBehaviour
             anitaArnold.SetActive(true);
             anitaArnoldButtons[1].SetActive(true);
             anitaArnoldButtons[0].SetActive(true);
+
         }
         if (artifact == "AvisMelvaFranklin")
         {
-
+            avisMelvaFranklin.SetActive(true);
+            avisMelvaFranklinButtons[0].SetActive(true);
         }
         if (artifact == "EloiseCarbajal")
         {
-
+            eloiseCarbajal.SetActive(true);
+            eloiseCarbajalButtons[0].SetActive(true);
         }
         if (artifact == "GeorgeRichardson")
         {
