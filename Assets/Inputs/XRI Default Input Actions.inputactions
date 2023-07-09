@@ -309,6 +309,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ConsolePrint",
+                    "type": "Button",
+                    "id": "916940e5-0816-4923-a3c4-6824493fee27",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -397,6 +406,17 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "Generic XR Controller",
                     "action": "Translate Anchor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "99d90475-9ad9-4188-90ab-f48f99432f52",
+                    "path": "<OculusTouchController>/thumbstickClicked",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "ConsolePrint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -799,6 +819,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ConsolePrint",
+                    "type": "Button",
+                    "id": "972c4ae5-f13e-4dbb-8a8a-f04c962f8725",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -887,6 +916,17 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "Generic XR Controller",
                     "action": "Translate Anchor",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8916eae-d488-48d5-9415-3f692878adc6",
+                    "path": "<OculusTouchController>/thumbstickClicked",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "ConsolePrint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

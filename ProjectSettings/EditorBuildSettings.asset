@@ -15,11 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/DeepDeuceArchive.unity
     guid: 895229b5e86cb764fa0a71ca3146ab73
   - enabled: 1
-    path: Assets/Scenes/EastSideTheater.unity
-    guid: 9d47a234fc541eb4abd431dde2221eb0
-  - enabled: 1
-    path: Assets/Scenes/BilliardHall.unity
-    guid: f31212e31d47cb146a52b40015ddf211
+    path: Assets/Scenes/GuidedBathAvenue.unity
+    guid: 4bd09fd5e31db9d4cbd8c591a08cdb90
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

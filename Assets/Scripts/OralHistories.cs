@@ -63,7 +63,7 @@ public class OralHistories : MonoBehaviour
                 clip1.Play();
                 clip1IsPlaying = true;
             }
-            Debug.Log("Playing " + clip1.clip.name);
+            //Debug.Log("Playing " + clip1.clip.name);
         }
         if(clip == 2)
         {
@@ -78,7 +78,7 @@ public class OralHistories : MonoBehaviour
                 clip2.Play();
                 clip2IsPlaying = true;
             }
-            Debug.Log("Playing " + clip2.clip.name);
+            //Debug.Log("Playing " + clip2.clip.name);
         }
     }
 
@@ -96,7 +96,7 @@ public class OralHistories : MonoBehaviour
         }
         
     }
-
+    
     public void StopMouseDrag(int slider)
     {
         if (slider == 1)

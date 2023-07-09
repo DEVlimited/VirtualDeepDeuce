@@ -72,4 +72,4 @@ GraphicsSettings:
     UnityEngine.Rendering.Universal.UniversalRenderPipeline: {fileID: 11400000, guid: 9100df5cd4a7bba46b12278862f6d866,
       type: 2}
   m_CameraRelativeLightCulling: 1
-  m_CameraRelativeShadowCulling: 1
+  m_CameraRelativeShadowCulling: 0

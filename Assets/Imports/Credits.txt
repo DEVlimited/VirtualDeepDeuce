@@ -2,5 +2,11 @@
 	- Significant changes were made
 		-- the front of the building was deleted along with the third floor balcony
 		-- statues were removed
-		-- efforts were taken to make it appear to be a 1940s/50s theater inspired by the Madame Walker Theatre. 
+		-- efforts were taken to make the Eastside Theater appear to be a 1940s/50s theater inspired by the Madame Walker Theatre. 
+
+Skyboxes
+	-https://assetstore.unity.com/packages/2d/textures-materials/sky/cloudy-summer-day-skybox-1079
+
+Loadscreen System: Easy Loading Screen
+	-https://assetstore.unity.com/packages/tools/gui/easy-loading-screen-140365
 
