@@ -638,6 +638,7 @@ public class GuidedBathAvenue : MonoBehaviour
 
             TextSwitch(direction);
             ViewSwitch(direction);
+            
 
         }
 
