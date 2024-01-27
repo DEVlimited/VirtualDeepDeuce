@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LoadingScreenBarSystem : MonoBehaviour {
 
     public GameObject bar;
+    private int currentSceneBuildIndexInt;
     public Text loadingText;
     public bool backGroundImageAndLoop;
     public float LoopTime;
@@ -21,7 +22,7 @@ public class LoadingScreenBarSystem : MonoBehaviour {
         StartCoroutine(Loading(sceneNo));
     }
 
-    // Used to try. Delete the comment lines (25 and 36)
+    // Used to beta test the loading bar. Delete the comment lines (25 and 36). Use "Space" in the playtest to fill the load value.
     /*
     public void Update()
     {
@@ -37,6 +38,7 @@ public class LoadingScreenBarSystem : MonoBehaviour {
 
     private void Start()
     {
+        currentSceneBuildIndexInt = SceneManager.GetActiveScene().buildIndex;
         vignetteEfect = transform.Find("VignetteEfect").GetComponent<Image>();
         vignetteEfect.color = new Color(vignetteEfect.color.r,vignetteEfect.color.g,vignetteEfect.color.b,vignetteEfectValue);
 
@@ -56,13 +58,13 @@ public class LoadingScreenBarSystem : MonoBehaviour {
             backgroundImages[i].SetActive(true);           
         }
     }
-
     // Activate the scene 
     IEnumerator Loading (int sceneNo)
     {
         async = SceneManager.LoadSceneAsync(sceneNo);
         async.allowSceneActivation = false;
 
+        SceneManager.UnloadSceneAsync(2);
         // Continue until the installation is completed
         while (async.isDone == false)
         {

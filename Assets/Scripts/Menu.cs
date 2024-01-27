@@ -20,11 +20,14 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log("Hand Check Beginning");
         if (PlayerPrefs.GetString("Hand") == "")
         {
             PlayerPrefs.SetString("Hand", "Right");
             Debug.Log("Hand was null in PlayerPrefs. Setting as 'Right'");
         }
+        //Debug.Log("Hand Check Complete");
+        //Debug.Log("Beginning First Time Check");
         if(PlayerPrefs.GetString("Menu First Time") == "")
         {
             PlayerPrefs.SetString("Menu First Time", "true");
@@ -34,15 +37,20 @@ public class Menu : MonoBehaviour
             Tutorial();
             PlayerPrefs.SetString("Menu First Time", "false");
         }
+        //Debug.Log("First Time Check Complete");
+        //Debug.Log("Debug Check Beginning");
         if(PlayerPrefs.GetString("Debug Mode") == "")
         {
             PlayerPrefs.SetString("Debug Mode", "off");
         }
         if(PlayerPrefs.GetString("Debug Mode") == "on")
         {
-            DebugModeSwitch();
+            PlayerPrefs.SetString("Debug Mode", "off");
         }
+        //Debug.Log("Debug Check Complete");
+        //Debug.Log("Logo Assignment Beginning");
         devImage = logos[1].GetComponent<Image>();
+        //Debug.Log("Logo Assignment Complete");
     }
 
     // Update is called once per frame
