@@ -63,9 +63,8 @@ public class LoadingScreenBarSystem : MonoBehaviour {
     {
         async = SceneManager.LoadSceneAsync(sceneNo);
         async.allowSceneActivation = false;
-
-        SceneManager.UnloadSceneAsync(2);
         // Continue until the installation is completed
+        float asyncProgress = 0.0f;
         while (async.isDone == false)
         {
             bar.transform.localScale = new Vector3(async.progress,0.9f,1);
@@ -73,9 +72,10 @@ public class LoadingScreenBarSystem : MonoBehaviour {
             if (loadingText != null)
                 loadingText.text = "%" + (100 * bar.transform.localScale.x).ToString("####");
 
-            if (async.progress == 0.9f)
+            if (async.progress > 0.0f)
             {
-                bar.transform.localScale = new Vector3(1, 0.9f, 1);
+                asyncProgress = async.progress;
+                bar.transform.localScale = new Vector3(1, asyncProgress, 1);
                 async.allowSceneActivation = true;
             }
             yield return null;
