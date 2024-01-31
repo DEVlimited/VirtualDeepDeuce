@@ -817,11 +817,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 58c82486-e3ee-491d-9a65-6cb3bddb4c96
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: VirtualDeepDeuce
+  organizationId: gamesbybobby
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
