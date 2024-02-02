@@ -1,5 +1,15 @@
 # Virtual Deep Deuce - A VR recreation of the Deep Deuce neighborhood of Oklahoma city circa 1950
-
+At the heart of the Virtual Deep Deuce project lies a profound commitment to preserving the
+essence of Oklahoma City's historic Deep Deuce District, an area once teeming with life and culture,
+now remembered only through scattered narratives and memories. This initiative leverages
+immersive virtual reality technology platforms designed by Drone’s Eye View (DEV) to resurrect a
+neighborhood once vibrant with culture and community, but lost to the tides of urban renewal. The project, inspired by the visionary guidance of
+Librarian Judith Matthews, is not merely a technical feat; it is a heartfelt tribute to an Oklahoma City
+treasure tragically lost. By weaving archival recordings and oral histories into the fabric of the
+virtual environment, DEV aims to offer an immersive educational experience that honors the
+district's legacy. The urgency of this mission is underscored by the dwindling number of individuals
+who experienced Deep Deuce firsthand, making this project a crucial bridge between past and
+present generations.
 ## Install Instructions
 ### PCVR
 Download the PCVR version from the releases page. Extract the program and run it. Should work on most major headsets with a powerful enough GPU. 
