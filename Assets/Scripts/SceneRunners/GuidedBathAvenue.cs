@@ -38,8 +38,6 @@ public class GuidedBathAvenue : MonoBehaviour
     public AudioSource audioSource;
 
     [Header("Wrist UI Elements")]
-    public TMP_Text narrativeTextR;
-    public TMP_Text narrativeTextL;
     public GameObject continueButton;
     public GameObject continueTextL;
     public GameObject continueTextR;
@@ -85,6 +83,9 @@ public class GuidedBathAvenue : MonoBehaviour
             //Tutorial();
             PlayerPrefs.SetString("Guided First Time", "false");
         }
+
+        //begin subtitles
+        StartCoroutine(FindObjectOfType<SubtitleDisplayer>().Begin());
 
     }
 
@@ -910,8 +911,6 @@ public class GuidedBathAvenue : MonoBehaviour
     public void TextSwitch(int direction = 1)
     {
         currentNarrativeString += direction;
-        narrativeTextL.text = narrativeTextChoices[currentNarrativeString];
-        narrativeTextR.text = narrativeTextChoices[currentNarrativeString];
         //Debug.Log("Current Text Passage = " + currentNarrativeString);
     }
     public void ViewSwitch(int direction = 1)

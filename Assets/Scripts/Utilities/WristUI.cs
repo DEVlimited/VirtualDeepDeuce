@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class WristUI : MonoBehaviour
@@ -23,6 +25,11 @@ public class WristUI : MonoBehaviour
     public GameObject tutorialPanelL;
     public GameObject tutorialPanelR;
 
+    public TextMeshProUGUI textL;
+    public TextMeshProUGUI textR;
+
+    public SRTParser parser;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +42,15 @@ public class WristUI : MonoBehaviour
         {
             leftHand.SetActive(false);
             rightHand.SetActive(true);
+            FindObjectOfType<SubtitleDisplayer>().Text = textR;
+            FindObjectOfType<SubtitleDisplayer>().Text2 = textR; 
         }
         else
         {
             leftHand.SetActive(true);
             rightHand.SetActive(false);
+            FindObjectOfType<SubtitleDisplayer>().Text = textL;
+            FindObjectOfType<SubtitleDisplayer>().Text2 = textL; 
         }
         //Debug.Log("Hand is " + onRight.ToString());
     }
@@ -54,18 +65,28 @@ public class WristUI : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Hand") == "Right")
         {
+            textL.text = FindAnyObjectByType<SubtitleDisplayer>().Text.text;
             //Debug.Log("Switching from right to left");
             leftHand.SetActive(true);
             rightHand.SetActive(false);
             PlayerPrefs.SetString("Hand", "Left");
+            FindObjectOfType<SubtitleDisplayer>().Text = textL;
+            FindObjectOfType<SubtitleDisplayer>().Text2 = textL; 
+
         }
         else
         {
+            textR.text = FindAnyObjectByType<SubtitleDisplayer>().Text.text;
             //Debug.Log("Switching from left to right");
             leftHand.SetActive(false);
             rightHand.SetActive(true);
             PlayerPrefs.SetString("Hand", "Right");
-        }
+            FindObjectOfType<SubtitleDisplayer>().Text = textR;
+            FindObjectOfType<SubtitleDisplayer>().Text2 = textR; 
+
+            
+        } 
+
     }
 
     private void OnMenuPressed(InputAction.CallbackContext obj)
