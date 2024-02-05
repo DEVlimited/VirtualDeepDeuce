@@ -19,4 +19,5 @@ Download the APK and install using SideQuest
 ## Use Instructions
 ![Instructions Image](/Assets/Images/Instructions/Basic.png)
 
- 
+ # Resources
+ - [Simple-SRT](https://github.com/roguecode/Unity-Simple-SRT/tree/master) served as the foundation for the subtitle system. It has been altered and can be found [here](/Assets/Imports/SRTReader/).
