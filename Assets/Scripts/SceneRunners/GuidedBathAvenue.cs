@@ -16,6 +16,9 @@ public class GuidedBathAvenue : MonoBehaviour
     private bool eventAvailable = true;
     private bool stopTime = false;
 
+    public float[] startTimes;
+    public float[] endTimes;
+
     [Header("Utilities")]
     public Fader fader;
     public GameObject xRRig;
@@ -937,5 +940,17 @@ public class GuidedBathAvenue : MonoBehaviour
     {
         stopTime = true;
     }
+
+public void Seek(int eventNumber)
+{
+    //get start time for target event
+    var target = startTimes[eventNumber];
+    //set audio file to the target time (start time)
+    audioSource.PlayScheduled(target);
+    //set subtitle parser to the target time
+    FindObjectOfType<SubtitleDisplayer>().Seek(target);
+    currentTime = target;
     
+}    
 }
+
