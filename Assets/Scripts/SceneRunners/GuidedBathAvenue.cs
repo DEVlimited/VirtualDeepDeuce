@@ -947,15 +947,18 @@ public void Seek(int eventNumber)
     //get start time for target event
     var target = startTimes[eventNumber];
     
-    Debug.Log("Target is " + target);
-    Debug.Log("dspTime is " + AudioSettings.dspTime);
+    //Debug.Log("Target is " + target);
+    /* Debug.Log("dspTime is " + AudioSettings.dspTime);
     double time = target + AudioSettings.dspTime;
-    Debug.Log("TargetDouble is " + time);
+    Debug.Log("TargetDouble is " + time); */
     //set audio file to the target time (start time)
     audioSource.time = target;
     Debug.Log("Clip playing at " + audioSource.time);
-    //set subtitle parser to the target time
-    FindObjectOfType<SubtitleDisplayer>().Seek(target);
+    //set subtitle parser to the target time which is read from the audioSource inside of the SubtitleDisplayer class
+    Debug.Log("Subtitle at: " + FindAnyObjectByType<SubtitleDisplayer>().elapsed);
+    FindObjectOfType<SubtitleDisplayer>().Seek();
+    Debug.Log("Updated subtitle at: " + FindAnyObjectByType<SubtitleDisplayer>().elapsed);
+    //sets currentTime to the target; Depricated but not rooted out yet
     currentTime = target;
     
 }    

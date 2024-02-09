@@ -7,10 +7,16 @@ using UnityEngine.UI;
 
 public class SubtitleDisplayer : MonoBehaviour
 {
+  [Header("SRT/TXT File")]
   public TextAsset Subtitle;
+  [Header("Audio File")]
+  private AudioSource audioSource;
+
+  [Header("Target Text Objects")]
   public TextMeshProUGUI Text;
   public TextMeshProUGUI Text2;
 
+  [Header("Subtitle Animation Controls")]
   [Range(0, 1)]
   public float FadeTime;
 
@@ -24,33 +30,38 @@ public class SubtitleDisplayer : MonoBehaviour
   public SubtitleBlock currentSubtitle;
   public SubtitleBlock subtitle;
 
+
 void Start()
 {
-
+  audioSource = GetComponent<AudioSource>();
 }
   void Update()
   {
      
   }
   
-  public IEnumerator Begin(float target = 0.0f)
+  public IEnumerator Begin()
   {
-    //var currentlyDisplayingText = Text;
+
+    //assign the text and fadetext objects
+    var currentlyDisplayingText = Text;
     var fadedOutText = Text2;
 
-    Text.text = string.Empty;
+    //empty the text fields
+    currentlyDisplayingText.text = string.Empty;
     fadedOutText.text = string.Empty;
 
-    Text.gameObject.SetActive(true);
+    //ensure both gameobjects are active
+    currentlyDisplayingText.gameObject.SetActive(true);
     fadedOutText.gameObject.SetActive(true);
 
-    yield return FadeTextOut(Text);
+    yield return FadeTextOut(currentlyDisplayingText);
     yield return FadeTextOut(fadedOutText);
 
     var parser = new SRTParser(Subtitle);
 
     startTime = Time.time;
-    var difference = Time.time - target;
+    //var difference = Time.time - target;
     currentSubtitle = null;
     while (true)
     {
@@ -71,7 +82,7 @@ void Start()
         _isPausedTimeSet = false;
       } */
 
-      elapsed = Time.time - startTime - difference;
+      elapsed = audioSource.time;
       //Debug.Log("Current SRT Time is " +  elapsed);
       subtitle = parser.GetForTime(elapsed);
       if (subtitle != null)
@@ -81,67 +92,7 @@ void Start()
           currentSubtitle = subtitle;
 
           // Swap references around
-          var temp = Text;
-          Text = fadedOutText;
-          fadedOutText = temp;
-
-          // Switch subtitle text
-          Text.text = currentSubtitle.Text;
-
-          // And fade out the old one. Yield on this one to wait for the fade to finish before doing anything else.
-          StartCoroutine(FadeTextOut(fadedOutText));
-
-          // Yield a bit for the fade out to get part-way
-          yield return new WaitForSeconds(FadeTime / 3);
-
-          // Fade in the new current
-          yield return FadeTextIn(Text);
-        }
-        yield return null;
-      }
-      else
-      {
-        //Debug.Log("Subtitles ended");
-        StartCoroutine(FadeTextOut(Text));
-        yield return FadeTextOut(fadedOutText);
-        Text.gameObject.SetActive(false);
-        fadedOutText.gameObject.SetActive(false);
-        yield break;
-      }
-    }
-  }
-
-  public IEnumerator Seeking(float target)
-  {
-    //var currentlyDisplayingText = Text;
-    var fadedOutText = Text2;
-
-    Text.gameObject.SetActive(true);
-    fadedOutText.gameObject.SetActive(true);
-
-    yield return FadeTextOut(Text);
-    yield return FadeTextOut(fadedOutText);
-
-    var parser = new SRTParser(Subtitle);
-    Debug.Log("Current SRT Time is " +  elapsed);
-    target += Time.time;
-    startTime = target;
-    currentSubtitle = null;
-    while (true)
-    {
-      startTime += Time.time;
-      elapsed = startTime - target;
-
-      Debug.Log("Current SRT Time is " +  elapsed);
-      subtitle = parser.GetForTime(elapsed);
-      if (subtitle != null)
-      {
-        if (!subtitle.Equals(currentSubtitle))
-        {
-          currentSubtitle = subtitle;
-
-          // Swap references around
-          var temp = Text;
+          var temp = currentlyDisplayingText;
           Text = fadedOutText;
           fadedOutText = temp;
 
@@ -180,14 +131,14 @@ void Start()
   {
     var toColor = text.color;
     toColor.a = 0;
-    yield return Fade(text, toColor, Ease.OutSine);
+    yield return null;
   }
 
   public IEnumerator FadeTextIn(TextMeshProUGUI text)
   {
     var toColor = text.color;
     toColor.a = 1;
-    yield return Fade(text, toColor, Ease.InSine);
+    yield return null;
   }
 
   IEnumerator Fade(TextMeshProUGUI text, Color toColor, Ease ease)
@@ -195,10 +146,9 @@ void Start()
     yield return DOTween.To(() => text.color, color => text.color = color, toColor, FadeTime).SetEase(ease).WaitForCompletion();
   }
 
-  public void Seek(float target)
+  public void Seek()
   {
-   
     StopAllCoroutines();
-    StartCoroutine(Begin(target));
+    StartCoroutine(Begin());
   }
 }
