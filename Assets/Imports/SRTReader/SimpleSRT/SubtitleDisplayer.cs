@@ -14,10 +14,10 @@ public class SubtitleDisplayer : MonoBehaviour
   [Range(0, 1)]
   public float FadeTime;
 
-  private bool _isPaused = false;
+  /*private bool _isPaused = false;
   private bool _isPausedTimeSet;
   private float _pausedTime;
-
+*/
   public float elapsed;
   public float startTime;
 
@@ -33,7 +33,7 @@ void Start()
      
   }
   
-  public IEnumerator Begin()
+  public IEnumerator Begin(float target = 0.0f)
   {
     //var currentlyDisplayingText = Text;
     var fadedOutText = Text2;
@@ -50,10 +50,11 @@ void Start()
     var parser = new SRTParser(Subtitle);
 
     startTime = Time.time;
+    var difference = Time.time - target;
     currentSubtitle = null;
     while (true)
     {
-      while (_isPaused)
+      /* while (_isPaused)
       {
         if (!_isPausedTimeSet)
         {
@@ -68,10 +69,10 @@ void Start()
       {
         startTime += Time.time - _pausedTime;
         _isPausedTimeSet = false;
-      }
+      } */
 
-      elapsed = Time.time - startTime;
-
+      elapsed = Time.time - startTime - difference;
+      Debug.Log("Current SRT Time is " +  elapsed);
       subtitle = parser.GetForTime(elapsed);
       if (subtitle != null)
       {
@@ -115,9 +116,6 @@ void Start()
     //var currentlyDisplayingText = Text;
     var fadedOutText = Text2;
 
-    Text.text = string.Empty;
-    fadedOutText.text = string.Empty;
-
     Text.gameObject.SetActive(true);
     fadedOutText.gameObject.SetActive(true);
 
@@ -125,13 +123,16 @@ void Start()
     yield return FadeTextOut(fadedOutText);
 
     var parser = new SRTParser(Subtitle);
-
-    startTime = Time.time + target;
+    Debug.Log("Current SRT Time is " +  elapsed);
+    target += Time.time;
+    startTime = target;
     currentSubtitle = null;
     while (true)
     {
-      elapsed = startTime - Time.time;
+      startTime += Time.time;
+      elapsed = startTime - target;
 
+      Debug.Log("Current SRT Time is " +  elapsed);
       subtitle = parser.GetForTime(elapsed);
       if (subtitle != null)
       {
@@ -196,7 +197,8 @@ void Start()
 
   public void Seek(float target)
   {
-    StopCoroutine(Begin());
-    StartCoroutine(Seeking(target));
+   
+    StopAllCoroutines();
+    StartCoroutine(Begin(target));
   }
 }
