@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
+using System;
 
 public class GuidedBathAvenue : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class GuidedBathAvenue : MonoBehaviour
     public Transform[] viewLocations;
     public string[] narrativeTextChoices;
     private int currentNarrativeString = 0;
-    public AudioClip[] audioClips;
+    public AudioClip audioClip;
     public AudioSource audioSource;
 
     [Header("Wrist UI Elements")]
@@ -906,10 +907,10 @@ public class GuidedBathAvenue : MonoBehaviour
     }
     public void ClipSwitch(int direction = 1)
     {
-        currentNarrativeClip += direction;
+        /* currentNarrativeClip += direction;
         audioSource.clip = audioClips[currentNarrativeClip];
-        audioSource.Play();
-        //Debug.Log("Current time is " + currentTime);
+        audioSource.Play(); */
+        Debug.Log("Old Clip Switch Called. Current time is " + currentTime + ". Direction is " + direction);
     }
     public void TextSwitch(int direction = 1)
     {
@@ -945,8 +946,14 @@ public void Seek(int eventNumber)
 {
     //get start time for target event
     var target = startTimes[eventNumber];
+    
+    Debug.Log("Target is " + target);
+    Debug.Log("dspTime is " + AudioSettings.dspTime);
+    double time = target + AudioSettings.dspTime;
+    Debug.Log("TargetDouble is " + time);
     //set audio file to the target time (start time)
-    audioSource.PlayScheduled(target);
+    audioSource.time = target;
+    Debug.Log("Clip playing at " + audioSource.time);
     //set subtitle parser to the target time
     FindObjectOfType<SubtitleDisplayer>().Seek(target);
     currentTime = target;

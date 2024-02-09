@@ -72,7 +72,7 @@ void Start()
       } */
 
       elapsed = Time.time - startTime - difference;
-      Debug.Log("Current SRT Time is " +  elapsed);
+      //Debug.Log("Current SRT Time is " +  elapsed);
       subtitle = parser.GetForTime(elapsed);
       if (subtitle != null)
       {
