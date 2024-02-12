@@ -42,15 +42,23 @@ public class WristUI : MonoBehaviour
         {
             leftHand.SetActive(false);
             rightHand.SetActive(true);
-            FindObjectOfType<SubtitleDisplayer>().Text = textR;
-            FindObjectOfType<SubtitleDisplayer>().Text2 = textR; 
+            if(textL != null)
+            {
+                FindObjectOfType<SubtitleDisplayer>().Text = textR;
+                FindObjectOfType<SubtitleDisplayer>().Text2 = textR;
+            }
+             
         }
         else
         {
             leftHand.SetActive(true);
             rightHand.SetActive(false);
-            FindObjectOfType<SubtitleDisplayer>().Text = textL;
-            FindObjectOfType<SubtitleDisplayer>().Text2 = textL; 
+            if(textL != null)
+            {
+                FindObjectOfType<SubtitleDisplayer>().Text = textL;
+                FindObjectOfType<SubtitleDisplayer>().Text2 = textL; 
+            }
+            
         }
         //Debug.Log("Hand is " + onRight.ToString());
     }
@@ -65,7 +73,11 @@ public class WristUI : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Hand") == "Right")
         {
-            textL.text = FindAnyObjectByType<SubtitleDisplayer>().Text.text;
+            if(textL != null)
+            {
+                textL.text = FindAnyObjectByType<SubtitleDisplayer>().Text.text;
+            }
+            
             //Debug.Log("Switching from right to left");
             leftHand.SetActive(true);
             rightHand.SetActive(false);
@@ -76,7 +88,11 @@ public class WristUI : MonoBehaviour
         }
         else
         {
-            textR.text = FindAnyObjectByType<SubtitleDisplayer>().Text.text;
+            if(textR != null)
+            {
+                textR.text = FindAnyObjectByType<SubtitleDisplayer>().Text.text;
+            }
+            
             //Debug.Log("Switching from left to right");
             leftHand.SetActive(false);
             rightHand.SetActive(true);
