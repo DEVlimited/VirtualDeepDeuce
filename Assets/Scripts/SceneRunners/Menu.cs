@@ -15,6 +15,8 @@ public class Menu : MonoBehaviour
 
     public GameObject bathAveButton;
     public GameObject archiveButton;
+    public GameObject uIButton;
+    public GameObject tutorialButton;
 
     public GameObject debugTextObject;
     public bool debugMode = false;
@@ -84,6 +86,8 @@ public class Menu : MonoBehaviour
         {
             bathAveButton.SetActive(true);
             archiveButton.SetActive(true);
+            tutorialButton.SetActive(true);
+            uIButton.SetActive(true);
             debugTextObject.SetActive(true);
             debugMode = true;
             PlayerPrefs.SetString("Debug Mode", "on");
@@ -94,6 +98,8 @@ public class Menu : MonoBehaviour
         {
             bathAveButton.SetActive(false);
             archiveButton.SetActive(false);
+            tutorialButton.SetActive(false);
+            uIButton.SetActive(false);
             debugTextObject.SetActive(false);
             debugMode = false;
             PlayerPrefs.SetString("Debug Mode", "off");
