@@ -13,6 +13,10 @@ public class UISandbox : MonoBehaviour
     private int currentBackgroundStyle = 0;
     public GameObject[] buttons;
     public GameObject[] backgrounds;
+    public AudioClip[] melodyTracks;
+    public TMP_Dropdown melodyDropdown;
+    private AudioSource melodyAudioSource;
+    public GameObject melodyJukebox;
     private GameObject currentButton;
     private GameObject currentBackground;
     public TextMeshProUGUI bgButtonText;
@@ -24,6 +28,31 @@ public class UISandbox : MonoBehaviour
         currentBackground = backgrounds[currentBackgroundStyle];
         currentButton.SetActive(true);
         currentBackground.SetActive(true);
+        
+        //set AudioSource
+        melodyAudioSource = GetComponentInChildren<AudioSource>();
+        //clear any options stored in the dropdown
+        melodyDropdown.ClearOptions();  
+        //create list to store them titles in
+        List<TMP_Dropdown.OptionData> titleList = new List<TMP_Dropdown.OptionData>();
+        //pull drop down options from audiofiles titles in folder and add them to the list
+        for (int i = 0; i < melodyTracks.Length; i++)
+        {
+            var newOption = new TMP_Dropdown.OptionData();
+            newOption.text = melodyTracks[i].name;
+            titleList.Add(newOption);
+        }
+        //add each title to the dropdown
+        foreach (TMP_Dropdown.OptionData title in titleList)
+        {
+            //add the title
+            melodyDropdown.options.Add(title);
+
+        }
+        //Add listener for when the value of the Dropdown changes, to take action
+        melodyDropdown.onValueChanged.AddListener(delegate {
+            DropdownValueChanged(melodyDropdown);
+        });
 
     }
 
@@ -31,6 +60,17 @@ public class UISandbox : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void DropdownValueChanged(TMP_Dropdown change)
+    {
+        //Debug.Log(change.value);
+        if(melodyAudioSource.isPlaying)
+        {
+            melodyAudioSource.Stop();
+        }
+        melodyAudioSource.clip = melodyTracks[change.value];
+        melodyAudioSource.Play();
     }
 
     public void ButtonStyleSwitch()
@@ -74,6 +114,18 @@ public class UISandbox : MonoBehaviour
         currentBackground.SetActive(true);
         bgButtonText.text = "Current background is " + backgrounds[currentBackgroundStyle].name;
         //Debug.Log("Current background is " + currentBackgroundStyle + ". Switch called.");
+    }
+
+    public void JukeboxSwitch()
+    {
+        if(melodyJukebox.activeInHierarchy)
+        {
+            melodyJukebox.SetActive(false);
+        }
+        else
+        {
+            melodyJukebox.SetActive(true);
+        }
     }
 
     public void SceneSwitch(int scene)
