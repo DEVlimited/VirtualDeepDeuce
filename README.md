@@ -1,4 +1,4 @@
-# Virtual Deep Deuce - A VR recreation of the Deep Deuce neighborhood of Oklahoma city circa 1950
+# Virtual Deep Deuce - A VR recreation of the Deep Deuce neighborhood of Oklahoma city circa 1950       
 ![MuralLogo](https://github.com/DEVlimited/VirtualDeepDeuce/assets/37113385/e679d860-958c-4960-9754-7434b4b27a41)
 At the heart of the Virtual Deep Deuce project lies a profound commitment to preserving the
 essence of Oklahoma City's historic Deep Deuce District, an area once teeming with life and culture,
@@ -19,6 +19,10 @@ Download the APK and install using SideQuest
 
 ## Use Instructions
 ![Instructions Image](/Assets/Images/Instructions/Basic.png)
+
+### Subtitle Importing
+#### Required filetype
+Virtual Deep Deuce supports SRT files. To be compatible with the application, you must change the file suffix from  `.SRT` to `. TXT`
 
  # Resources
  - [Simple-SRT](https://github.com/roguecode/Unity-Simple-SRT/tree/master) served as the foundation for the subtitle system. It has been altered and can be found [here](/Assets/Imports/SRTReader/).
