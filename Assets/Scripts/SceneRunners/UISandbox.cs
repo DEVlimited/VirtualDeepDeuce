@@ -17,6 +17,7 @@ public class UISandbox : MonoBehaviour
     public TMP_Dropdown melodyDropdown;
     private AudioSource melodyAudioSource;
     public GameObject melodyJukebox;
+    public GameObject carousel;
     private GameObject currentButton;
     private GameObject currentBackground;
     public TextMeshProUGUI bgButtonText;
@@ -125,6 +126,18 @@ public class UISandbox : MonoBehaviour
         else
         {
             melodyJukebox.SetActive(true);
+        }
+    }
+
+    public void CarouselSwitch()
+    {
+        if(carousel.activeInHierarchy)
+        {
+            carousel.SetActive(false);
+        }
+        else
+        {
+            carousel.SetActive(true);
         }
     }
 
