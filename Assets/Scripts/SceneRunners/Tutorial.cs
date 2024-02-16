@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
@@ -15,5 +16,10 @@ public class Tutorial : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SceneSwitch(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

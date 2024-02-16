@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class UISandbox : MonoBehaviour
 {
+    public GameObject interfacePanel;
     private int currentButtonStyle = 0;
     private int currentBackgroundStyle = 0;
     public GameObject[] buttons;
@@ -18,6 +19,7 @@ public class UISandbox : MonoBehaviour
     private AudioSource melodyAudioSource;
     public GameObject melodyJukebox;
     public GameObject carousel;
+    public RectTransform simpleScrollPanelContainer;
     private GameObject currentButton;
     private GameObject currentBackground;
     public TextMeshProUGUI bgButtonText;
@@ -31,7 +33,7 @@ public class UISandbox : MonoBehaviour
         currentBackground.SetActive(true);
         
         //set AudioSource
-        melodyAudioSource = GetComponentInChildren<AudioSource>();
+        melodyAudioSource = GetComponent<AudioSource>();
         //clear any options stored in the dropdown
         melodyDropdown.ClearOptions();  
         //create list to store them titles in
@@ -54,6 +56,8 @@ public class UISandbox : MonoBehaviour
         melodyDropdown.onValueChanged.AddListener(delegate {
             DropdownValueChanged(melodyDropdown);
         });
+
+        //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
 
     }
 
@@ -134,10 +138,14 @@ public class UISandbox : MonoBehaviour
         if(carousel.activeInHierarchy)
         {
             carousel.SetActive(false);
+            //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
+            interfacePanel.SetActive(true);
         }
         else
         {
             carousel.SetActive(true);
+            //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
+            interfacePanel.SetActive(false);
         }
     }
 
