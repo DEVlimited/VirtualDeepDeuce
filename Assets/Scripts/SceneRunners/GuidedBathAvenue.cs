@@ -1,10 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
+using System;
 
 public class GuidedBathAvenue : MonoBehaviour
 {
@@ -13,9 +14,11 @@ public class GuidedBathAvenue : MonoBehaviour
     public TextMeshProUGUI currentTimeText;
     public float eventDelay = 3f;
     public float timeSinceEventChange;
+    public int currentEventNumber;
     private bool eventAvailable = true;
     private bool stopTime = false;
-
+    private int nextViewSwitch;
+    private int nextItemSwitch;
     public float[] startTimes;
     public float[] endTimes;
 
@@ -37,7 +40,7 @@ public class GuidedBathAvenue : MonoBehaviour
     public Transform[] viewLocations;
     public string[] narrativeTextChoices;
     private int currentNarrativeString = 0;
-    public AudioClip[] audioClips;
+    public AudioClip audioClip;
     public AudioSource audioSource;
 
     [Header("Wrist UI Elements")]
@@ -58,7 +61,6 @@ public class GuidedBathAvenue : MonoBehaviour
     public GameObject[] guidedImages;
 
     public InputActionReference consolePrint;
-    
 
     void Start()
     {
@@ -68,7 +70,6 @@ public class GuidedBathAvenue : MonoBehaviour
         ViewSwitch(0);
         currentTime = 0;
         nextEventTime = 5.4f;
-        TextSwitch(0);
         audioSource.volume = bobbyVolume;  
         //check playerprefs and run missing setups/tutorials
         if (PlayerPrefs.GetString("Hand") == "")
@@ -97,10 +98,6 @@ public class GuidedBathAvenue : MonoBehaviour
         if (!stopTime)
         {
             currentTime += Time.deltaTime;
-            if (audioSource.isPlaying == false)
-            {
-                ClipSwitch();
-            }
         }
         if (stopTime)
         {
@@ -147,8 +144,43 @@ public class GuidedBathAvenue : MonoBehaviour
     {
         consolePrint.action.started += ConsolePrint_performed;
     }
+
+    public void NewEventSwitch(int eventNumber = 0, int direction = 0, int destination = 0)
+    {
+        //set currentEventNumber as working eventNumber
+        eventNumber = currentEventNumber;
+
+        //if there is a desired destination, go there
+            //if not, use direction
+        if(destination == 0)
+        {
+            //go to adjacent event using 'direction
+            eventNumber += direction;
+        }
+        else
+        {
+            //go to specific event using 'destination'
+            eventNumber = destination;
+        }
+        //check if viewSwitch is needed
+        if(eventNumber == nextViewSwitch)
+        {
+            //go to specific View using 'destination'
+            ViewSwitch(0, eventNumber);
+        }
+        //check if itemSwitch is needed
+        if(eventNumber == nextItemSwitch)
+        {
+            //go to specific View using 'destination'
+            ItemSwitch(0, eventNumber);
+        }
+        
+        currentEventNumber = eventNumber;
+
+    }
     public void EventSwitch(int direction = 1)
     {
+        //turn off WristUI image panels if they are on
         if(imagePanelL.activeInHierarchy)
         {
             panel.SetActive(true);
@@ -159,14 +191,17 @@ public class GuidedBathAvenue : MonoBehaviour
             panel.SetActive(true);
             imagePanelR.SetActive(false);
         }
+        
+        //set eventAvailable to false to prevent switching
         eventAvailable = false;
-        //comments show what text is handled in event below
+        
+        //comments show what text is handled in events below
             //The Fairgrounds neighborhood had the approximate borders of NE 8th Street on the north to the Rock Island railroad tracks at the south, and Stonewall or Lottie Avenues to the West and Eastern Avenue (now MLK) to the east
         if (eventNumber == 0)
         {
             currentTime = 5.4f;
             nextEventTime = 24.5f;
-            TextSwitch(direction);
+            //TextSwitch(direction);
             ViewSwitch(direction);
         }
 
@@ -175,7 +210,7 @@ public class GuidedBathAvenue : MonoBehaviour
         {
             currentTime = 24.5f;
             nextEventTime = 32f;
-            TextSwitch(direction);
+            //TextSwitch(direction);
         }
 
         //The area was near the path of the unchallenged North Canadian River and was inclined to flooding.
@@ -183,7 +218,7 @@ public class GuidedBathAvenue : MonoBehaviour
         {
             currentTime = 32f;
             nextEventTime = 38f;
-            TextSwitch(direction);
+            //TextSwitch(direction);
         }
 
         //The Fairgrounds was an incredibly dense, predominantly Black neighborhood.
@@ -191,7 +226,7 @@ public class GuidedBathAvenue : MonoBehaviour
         {
             currentTime = 38f;
             nextEventTime = 43f;
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
 
         //Because of redlining and other systemically racist house practices, the majority of African American residents of Oklahoma City primarily lived in a few specific neighborhoods.
@@ -199,7 +234,7 @@ public class GuidedBathAvenue : MonoBehaviour
         {
             currentTime = 43;
             nextEventTime = 53f;
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
 
         //Take a look at these aerial photos...
@@ -223,7 +258,7 @@ public class GuidedBathAvenue : MonoBehaviour
             imagePanelR.SetActive(true);
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+            //TextSwitch(direction);
         }
 
         //The East Side Theater and its neighboring...
@@ -232,7 +267,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 54.5f;
             nextEventTime = 68f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
 
         //DJS: He had the idea of Blacks, Negros, doing things...
@@ -248,7 +283,7 @@ public class GuidedBathAvenue : MonoBehaviour
 
             
             //skipping portion with missing audio -> audio is missing because I don't have timestamps
-            TextSwitch(direction * 2);
+           // TextSwitch(direction * 2);
 
         }
 
@@ -258,7 +293,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 155f;
             nextEventTime = 221.5f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
 
         }
 
@@ -287,7 +322,7 @@ public class GuidedBathAvenue : MonoBehaviour
             imagePanelR.SetActive(true);
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+           // TextSwitch(direction);
 
         }
 
@@ -314,7 +349,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 8;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
 
         //So why is the East Side Theater gone?
@@ -324,7 +359,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 223f;
             nextEventTime = 233f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
 
         }
 
@@ -335,7 +370,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 233f;
             nextEventTime = 243f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
         //Oral histories from former and current residents of the Fairgrounds describe the types of business and activities...
         if(eventNumber == 13)
@@ -344,7 +379,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 243f;
             nextEventTime = 255f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
         }
 
         //706 N Bath  Louie's Garage...
@@ -354,8 +389,7 @@ public class GuidedBathAvenue : MonoBehaviour
             nextEventTime = 267f;
 
             ViewSwitch(direction);
-            TextSwitch(direction);
-
+           // TextSwitch(direction);
         }
 
         //…and on down, there was a man, they called it Buck’s
@@ -364,7 +398,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 267f;
             nextEventTime = 320f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
 
         }
 
@@ -391,7 +425,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 38;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+           // TextSwitch(direction);
             ViewSwitch(direction);
 
         }
@@ -422,7 +456,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 39;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+            //TextSwitch(direction);
 
         }
 
@@ -433,7 +467,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 308f;
             nextEventTime = 362f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -450,7 +484,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 355f;
             nextEventTime = 356f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
         }
@@ -461,7 +495,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 356f;
             nextEventTime = 386f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
             ViewSwitch(direction);
         }
 
@@ -487,7 +521,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 42;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+            //TextSwitch(direction);
             ViewSwitch(direction);
         }
 
@@ -497,7 +531,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 385f;
             nextEventTime = 400f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             ViewSwitch(direction);
         }
 
@@ -524,7 +558,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 43;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+            //TextSwitch(direction);
             ViewSwitch(direction);
         }
 
@@ -547,7 +581,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 49;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+            //TextSwitch(direction);
         }
 
         //718B Bath This address was also home to the Glamour-Manor...
@@ -569,7 +603,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 53;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+            //TextSwitch(direction);
         }
 
         //720-722 Bath East Side Theater Listen...
@@ -578,7 +612,7 @@ public class GuidedBathAvenue : MonoBehaviour
             //normalize time
             currentTime = 394f;
             nextEventTime = 404f;
-            TextSwitch(direction);
+            //TextSwitch(direction);
             ViewSwitch();
         }
 
@@ -588,7 +622,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 404f;
             nextEventTime = 435f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
 
         }
 
@@ -598,7 +632,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 435f;
             nextEventTime = 472f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
 
         }
 
@@ -609,7 +643,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 475f;
             nextEventTime = 489f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
             ViewSwitch(direction);
         }
 
@@ -632,7 +666,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 58;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
 
         //Urban Renewal
@@ -641,7 +675,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 500f;
             nextEventTime = 532f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
             ViewSwitch(direction);
             
 
@@ -653,7 +687,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 532f;
             nextEventTime = 592f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
 
         //SB: What do you remember about when
@@ -679,7 +713,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentImage = 59;
             ImageSwitch(narrativeImageL, narrativeTexture[currentImage]);
             ImageSwitch(narrativeImageR, narrativeTexture[currentImage]);
-            TextSwitch(direction);
+           // TextSwitch(direction);
         }
 
         //MH: You found that throughout the neighborhood that...
@@ -689,7 +723,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 637f;
             nextEventTime = 660.5f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -702,7 +736,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 660.5f;
             nextEventTime = 684f;
 
-            TextSwitch(direction);
+           // TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -715,7 +749,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 684f;
             nextEventTime = 707.5f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -728,7 +762,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 707.5f;
             nextEventTime = 731f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -741,7 +775,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 731f;
             nextEventTime = 773f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -754,7 +788,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 754f;
             nextEventTime = 777.5f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -767,7 +801,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 777.5f;
             nextEventTime = 854f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -780,7 +814,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 915f;
             nextEventTime = 942f;
 
-            TextSwitch(direction);
+            //extSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -793,7 +827,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 942f;
             nextEventTime = 955f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -807,7 +841,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 955f;
             nextEventTime = 985f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -820,7 +854,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 985f;
             nextEventTime = 1185f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -834,7 +868,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 1185f;
             nextEventTime = 1242f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -852,7 +886,7 @@ public class GuidedBathAvenue : MonoBehaviour
             currentTime = 1242f;
             nextEventTime = 1243f;
 
-            TextSwitch(direction);
+            //TextSwitch(direction);
             imagePanelL.SetActive(true);
             imagePanelR.SetActive(true);
 
@@ -885,7 +919,6 @@ public class GuidedBathAvenue : MonoBehaviour
     {
         image.texture = texture;
         currentImage += direction;
-        float reduction = 2;
 
         if (currentImage > minMaxClamp[1])
         {
@@ -904,24 +937,45 @@ public class GuidedBathAvenue : MonoBehaviour
         ImageSwitch(narrativeImageL, narrativeTexture[currentImage], direction);
         ImageSwitch(narrativeImageR, narrativeTexture[currentImage], direction);
     }
-    public void ClipSwitch(int direction = 1)
+     public void ItemSwitch(int direction = 1, int destination = 0)
     {
-        currentNarrativeClip += direction;
-        audioSource.clip = audioClips[currentNarrativeClip];
-        audioSource.Play();
-        //Debug.Log("Current time is " + currentTime);
+        //if there is a desired destination, go there
+            //if not, use direction
+        if(destination == 0)
+        {
+            //go to adjacent item using 'direction'
+            currentImage += direction;
+        }
+        else
+        {
+            //go to a specific item using 'desitination'
+            currentImage = destination;
+        }
+
     }
-    public void TextSwitch(int direction = 1)
+    public void ViewSwitch(int direction = 1, int destination = 0)
     {
-        currentNarrativeString += direction;
-        //Debug.Log("Current Text Passage = " + currentNarrativeString);
-    }
-    public void ViewSwitch(int direction = 1)
-    {
+        //fade out camera
         fader.FadeOut();
-        currentView += direction;
+
+        //if there is a desired destination, go there
+            //if not, use direction
+        if(destination == 0)
+        {
+            //go to adjacent view using 'direction'
+            currentView += direction;
+        }
+        else
+        {
+            //go to a specific view using 'desitination'
+            currentView = destination;
+        }
+
+        //set camera position and rotation to the new location
         xRRig.transform.position = viewLocations[currentView].position;
         xRRig.transform.rotation = viewLocations[currentView].rotation;
+
+        //fade in camera at new location
         fader.FadeIn();
 
     }
@@ -945,10 +999,19 @@ public void Seek(int eventNumber)
 {
     //get start time for target event
     var target = startTimes[eventNumber];
+    
+    //Debug.Log("Target is " + target);
+    /* Debug.Log("dspTime is " + AudioSettings.dspTime);
+    double time = target + AudioSettings.dspTime;
+    Debug.Log("TargetDouble is " + time); */
     //set audio file to the target time (start time)
-    audioSource.PlayScheduled(target);
-    //set subtitle parser to the target time
-    FindObjectOfType<SubtitleDisplayer>().Seek(target);
+    audioSource.time = target;
+    Debug.Log("Clip playing at " + audioSource.time);
+    //set subtitle parser to the target time which is read from the audioSource inside of the SubtitleDisplayer class
+    Debug.Log("Subtitle at: " + FindAnyObjectByType<SubtitleDisplayer>().elapsed);
+    //FindObjectOfType<SubtitleDisplayer>().Seek();
+    Debug.Log("Updated subtitle at: " + FindAnyObjectByType<SubtitleDisplayer>().elapsed);
+    //sets currentTime to the target; Depricated but not rooted out yet
     currentTime = target;
     
 }    

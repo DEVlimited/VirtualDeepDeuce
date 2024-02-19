@@ -1,0 +1,7 @@
+1
+00:00:01,100 --> 00:00:12,100
+here you will see the laser coming out at the end of your controller you can use this like a mouse cursor whenever it hovers over something interactable the laser will change colors
+
+2
+00:00:14,000 --> 00:00:18,200
+use the trigger button to click when a laser is pointing at something
