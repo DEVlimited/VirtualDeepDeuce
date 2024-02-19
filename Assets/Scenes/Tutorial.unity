@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad9ea8e23f757041bab2f4cff8f6246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Subtitle: {fileID: 4900000, guid: 2d999c7e9b234a143ac43ccaa1e9f9b1, type: 3}
+  Subtitle: {fileID: 4900000, guid: 9e1b305b0139ede44a914ba49e959be2, type: 3}
   Text: {fileID: 533340869}
   Text2: {fileID: 533340869}
   FadeTime: 0
@@ -1116,7 +1116,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942888884}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 36651cf78a163524c859cc12e7f38ee2, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c97ea0337e96d3b498f0774923288512, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
