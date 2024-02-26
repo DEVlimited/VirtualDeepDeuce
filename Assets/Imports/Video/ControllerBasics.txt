@@ -1,7 +1,27 @@
 1
-00:00:01,100 --> 00:00:12,100
-here you will see the laser coming out at the end of your controller you can use this like a mouse cursor whenever it hovers over something interactable the laser will change colors
+00:00:00,200 --> 00:00:15,000
+welcome to Virtual Fairgrounds these are your controllers if you look down in the headset you can see them virtually the controllers have trigger buttons on your index fingers and grip buttons on your middle fingers that will be utilized
 
 2
-00:00:14,000 --> 00:00:18,200
-use the trigger button to click when a laser is pointing at something
+00:00:16,200 --> 00:00:19,900
+there's a beam coming out of your dominant hand it's currently red
+
+3
+00:00:24,500 --> 00:00:31,200
+you will use the trigger to click on your dominant hand similar to how you would click with a mouse cursor
+
+4
+00:00:32,500 --> 00:00:36,500
+he will use the grip trigger on your dominant hand to grab objects
+
+5
+00:00:38,400 --> 00:00:43,700
+when objects are interactable the beam coming out of the controller will turn from red to White
+
+6
+00:00:46,300 --> 00:00:50,900
+if you'd like to change your dominant hands please click switch hands on your offhand
+
+7
+00:00:53,800 --> 00:01:02,000
+when you're grabbing objects you can use the joystick on your dominant hand to manipulate the object

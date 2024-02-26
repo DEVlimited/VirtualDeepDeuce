@@ -36,11 +36,6 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.SetString("Menu First Time", "true");
         }
-        if (PlayerPrefs.GetString("Menu First Time") == "true")
-        {
-            Tutorial();
-            PlayerPrefs.SetString("Menu First Time", "false");
-        }
         //Debug.Log("First Time Check Complete");
         //Debug.Log("Debug Check Beginning");
         if(PlayerPrefs.GetString("Debug Mode") == "")
@@ -84,11 +79,11 @@ public class Menu : MonoBehaviour
     {
         if (!debugMode)
         {
-            bathAveButton.SetActive(true);
+            /* bathAveButton.SetActive(true);
             archiveButton.SetActive(true);
             tutorialButton.SetActive(true);
             uIButton.SetActive(true);
-            debugTextObject.SetActive(true);
+            debugTextObject.SetActive(true); */
             debugMode = true;
             PlayerPrefs.SetString("Debug Mode", "on");
 
@@ -96,11 +91,11 @@ public class Menu : MonoBehaviour
         }
         else
         {
-            bathAveButton.SetActive(false);
+            /* bathAveButton.SetActive(false);
             archiveButton.SetActive(false);
             tutorialButton.SetActive(false);
             uIButton.SetActive(false);
-            debugTextObject.SetActive(false);
+            debugTextObject.SetActive(false); */
             debugMode = false;
             PlayerPrefs.SetString("Debug Mode", "off");
 
@@ -109,7 +104,17 @@ public class Menu : MonoBehaviour
     }
     public void SwitchScene(int scene)
     {
-        SceneManager.LoadScene(scene);
+        if(PlayerPrefs.GetString("Menu First Time") == "true") 
+        {
+            //Debug.Log("Tutorial Called Cause it from menu class");
+            PlayerPrefs.SetString("Menu First Time", "false");
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
+        
     }
 
     public void AppExit()

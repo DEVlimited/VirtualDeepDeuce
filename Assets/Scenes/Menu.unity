@@ -251,7 +251,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.098039225, g: 0.10980393, b: 0.1137255, a: 1}
+  m_BackGroundColor: {r: 0.003921569, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -992,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &367985537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &571007673
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2208,7 +2208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1017348074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2489,7 +2489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1046805639
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3359,6 +3359,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 747566580}
     m_Modifications:
+    - target: {fileID: 968954016616431432, guid: e8347d744effa3c48b51dffffb9983be,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8e2285319734ada48bb826fd758ec88a, type: 2}
     - target: {fileID: 968954016616431434, guid: e8347d744effa3c48b51dffffb9983be,
         type: 3}
       propertyPath: m_Name

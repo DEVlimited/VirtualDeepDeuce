@@ -61,7 +61,15 @@ public class LoadingScreenBarSystem : MonoBehaviour {
     // Activate the scene 
     IEnumerator Loading (int sceneNo)
     {
-        async = SceneManager.LoadSceneAsync(sceneNo);
+        if(PlayerPrefs.GetString("Menu First Time") == "true") 
+        {
+            //Debug.Log("Tutorial Called from loading screen class");
+            PlayerPrefs.SetString("Menu First Time", "false");
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            async = SceneManager.LoadSceneAsync(sceneNo);
         async.allowSceneActivation = false;
         // Continue until the installation is completed
         float asyncProgress = 0.0f;
@@ -79,6 +87,7 @@ public class LoadingScreenBarSystem : MonoBehaviour {
                 async.allowSceneActivation = true;
             }
             yield return null;
+        }
         }
     }
 
