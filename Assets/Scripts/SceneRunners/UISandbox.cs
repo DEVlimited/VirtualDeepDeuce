@@ -18,6 +18,7 @@ public class UISandbox : MonoBehaviour
     private AudioSource melodyAudioSource;
     public GameObject melodyJukebox;
     public GameObject carousel;
+    public GameObject spearkerCardPanel;
     public RectTransform simpleScrollPanelContainer;
     private GameObject currentButton;
     private GameObject currentBackground;
@@ -146,6 +147,22 @@ public class UISandbox : MonoBehaviour
             //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
             interfacePanel.SetActive(false);
         }
+    }
+    public void SpeakerCardPanelSwitch()
+    {
+        if(spearkerCardPanel.activeInHierarchy)
+        {
+            spearkerCardPanel.SetActive(false);
+            //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
+            interfacePanel.SetActive(true);
+        }
+        else
+        {
+            spearkerCardPanel.SetActive(true);
+            //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
+            interfacePanel.SetActive(false);
+        }
+
     }
 
     public void SceneSwitch(int scene)
