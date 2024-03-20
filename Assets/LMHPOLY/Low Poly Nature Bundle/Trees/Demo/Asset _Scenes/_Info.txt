@@ -1,0 +1,2 @@
+-"Tree_Assets_Demo" and "Wood_Assets_Demo" - Contains ONLY prefabs without the Snow!
+-Snow prefabs are used in Demo_07! You can find it inside (Low Poly Trees Pack / Demo / Demo_Scenes).

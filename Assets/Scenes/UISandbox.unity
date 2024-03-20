@@ -6200,15 +6200,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interfacePanel: {fileID: 2142124354}
+  backgrounds:
+  - {fileID: 968954015983747623}
+  - {fileID: 1749190732}
+  carousel: {fileID: 1426487424}
+  spearkerCardPanel: {fileID: 63859820}
+  simpleScrollPanelContainer: {fileID: 108568325}
   buttons:
   - {fileID: 1777598571}
   - {fileID: 1477855518}
   - {fileID: 1944229982}
   - {fileID: 741744226}
   - {fileID: 1602991632}
-  backgrounds:
-  - {fileID: 968954015983747623}
-  - {fileID: 1749190732}
+  melodyDropdown: {fileID: 1010015666}
+  bgButtonText: {fileID: 890259903}
   melodyTracks:
   - {fileID: 8300000, guid: 0a4d8ed36ed55a440ac2b297ef3ddda6, type: 3}
   - {fileID: 8300000, guid: d6b08ed21b1e5534e88c5cb65da8029e, type: 3}
@@ -6231,12 +6236,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c68360540acbb8947a887795c52dc3b9, type: 3}
   - {fileID: 8300000, guid: 4bd702169df97c1459b210dd48232d11, type: 3}
   - {fileID: 8300000, guid: bf2b0e61ba545294586f02ad75eced7b, type: 3}
-  melodyDropdown: {fileID: 1010015666}
   melodyJukebox: {fileID: 1615820477}
-  carousel: {fileID: 1426487424}
-  spearkerCardPanel: {fileID: 63859820}
-  simpleScrollPanelContainer: {fileID: 108568325}
-  bgButtonText: {fileID: 890259903}
 --- !u!82 &1582661093
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10434,7 +10434,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ef6f09da425bbee4a939061961d213c5, type: 2}
+  - {fileID: 2100000, guid: 8e2285319734ada48bb826fd758ec88a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
