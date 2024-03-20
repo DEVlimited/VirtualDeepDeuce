@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
 using System;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class GuidedBathAvenue : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class GuidedBathAvenue : MonoBehaviour
     public Fader fader;
     public GameObject xRRig;
     public ImageResize imageResize;
+    public CSVtoNarrativeParser parser;
 
 
     private int currentNarrativeClip = 0;
@@ -64,6 +66,7 @@ public class GuidedBathAvenue : MonoBehaviour
 
     void Start()
     {
+        //LoadNarrative();
         InputActionsSetup();
 
         currentView = 0;
@@ -119,6 +122,24 @@ public class GuidedBathAvenue : MonoBehaviour
         }   
         //for timing/testing purposes - displays the time since scene start
         currentTimeText.text = eventNumber + " | " + currentTime;
+    }
+
+    private void LoadNarrative()
+    {
+        startTimes = new float[parser.grid.Length];
+        //set startTimes
+            //pull them from csv parsed to table. start times begin on row 1 column 1; see for statment to see implementation
+       for (int i = 1; i < parser.grid.Length - 1; i++)
+       {
+            Debug.Log(i);
+            parser.CellContentsCall(i, 1);
+            var temp = i;
+            temp -= 1;
+            Debug.Log(parser.resultText + " is being set to startTime" + temp);
+            Debug.Log("Setting startTime" + startTimes[temp] + " to " + parser.resultText + " | " + Convert.ToInt32(parser.resultText));
+            startTimes[temp] = Convert.ToInt32(parser.resultText);
+            Debug.Log(startTimes[temp]);
+       }
     }
 
     private void ConsolePrint_performed(InputAction.CallbackContext obj)
