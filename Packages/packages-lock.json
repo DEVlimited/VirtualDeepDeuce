@@ -33,13 +33,14 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.dt.app-ui": {
-      "version": "1.0.0-pre.3",
+      "version": "1.0.4",
       "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.androidjni": "1.0.0",
         "com.unity.modules.uielements": "1.0.0",
-        "com.unity.modules.physics": "1.0.0"
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.screencapture": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -132,11 +133,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.muse.common": {
-      "version": "1.0.0-pre.3",
+      "version": "1.0.0-pre.18",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.dt.app-ui": "1.0.0-pre.3",
+        "com.unity.dt.app-ui": "1.0.4",
         "com.unity.burst": "1.8.7",
         "com.unity.settings-manager": "2.0.1",
         "com.unity.modules.imageconversion": "1.0.0",
@@ -145,11 +146,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.muse.texture": {
-      "version": "1.0.0-pre.3",
+      "version": "1.0.0-pre.18",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.muse.common": "1.0.0-pre.3",
+        "com.unity.muse.common": "1.0.0-pre.18",
         "com.unity.shadergraph": "14.0.7"
       },
       "url": "https://packages.unity.com"

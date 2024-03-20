@@ -1,0 +1,738 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a6b9796d1c0440eba061ace5e9dff6, type: 3}
+  m_Name: concrete, light damage, grey, hi res
+  m_EditorClassIdentifier: 
+  assetsData:
+  - rid: 3301791007918784526
+  - rid: 3301791007918784532
+  - rid: 3301791007918784538
+  - rid: 3301791007918784544
+  - rid: 3301791008854638592
+  - rid: 3301791008854638595
+  - rid: 3301791008854638601
+  - rid: 3301791008854638607
+  - rid: 3301791008854638613
+  currentMode: TextToImage
+  m_Data:
+  - rid: 3301791007918784517
+  - rid: 3301791007918784518
+  - rid: 3301791007918784519
+  - rid: 3301791007918784520
+  preRefinedArtifact:
+    rid: -2
+  refinedArtifact:
+    rid: -2
+  selectedArtifact:
+    rid: 3301791008854638613
+  m_Operators:
+  - rid: 3301791007918784521
+  - rid: 3301791007918784522
+  - rid: 3301791007918784523
+  - rid: 3301791007918784524
+  - rid: 3301791007918784525
+  m_PreRefineOperators: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3301791007918784517
+      type: {class: FeedbackManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_Liked:
+          m_Values: []
+        m_Disliked:
+          m_Values: []
+    - rid: 3301791007918784518
+      type: {class: MainUI/UISize, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_NodeListWidth: 300
+        m_NodeListRefineWidth: 300
+        m_AssetListRefineWidth: 200
+    - rid: 3301791007918784519
+      type: {class: GenerateButtonData, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data: 
+    - rid: 3301791007918784520
+      type: {class: BookmarkManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_BookmarkedArtifacts:
+          m_Values: []
+        m_IsFilterEnabled: 0
+    - rid: 3301791007918784521
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784522
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - marquee background, non-repeating, hi res, no text, off white
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784523
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784524
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784525
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784526
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: a1034b96-cfc8-4021-be9d-7544b25b4704
+        Seed: 717792295
+        m_Operators:
+        - rid: 3301791007918784527
+        - rid: 3301791007918784528
+        - rid: 3301791007918784529
+        - rid: 3301791007918784530
+        - rid: 3301791007918784531
+        history:
+        - rid: 3301791007918784526
+        IsPbrMode: 0
+    - rid: 3301791007918784527
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784528
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - concrete, light damage, grey, hi res
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784529
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784530
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784531
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784532
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: 138d2694-e480-49b1-957d-2fb3a90353ae
+        Seed: 1313172163
+        m_Operators:
+        - rid: 3301791007918784533
+        - rid: 3301791007918784534
+        - rid: 3301791007918784535
+        - rid: 3301791007918784536
+        - rid: 3301791007918784537
+        history:
+        - rid: 3301791007918784532
+        IsPbrMode: 0
+    - rid: 3301791007918784533
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784534
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - concrete, light damage, grey, hi res
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784535
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784536
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784537
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784538
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: 41f41679-2798-4a2c-a088-763f37786338
+        Seed: 359661451
+        m_Operators:
+        - rid: 3301791007918784539
+        - rid: 3301791007918784540
+        - rid: 3301791007918784541
+        - rid: 3301791007918784542
+        - rid: 3301791007918784543
+        history:
+        - rid: 3301791007918784538
+        IsPbrMode: 0
+    - rid: 3301791007918784539
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784540
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - concrete, light damage, grey, hi res
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784541
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784542
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784543
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784544
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: 95acf892-e4d4-45d9-b751-575619789b18
+        Seed: 599586012
+        m_Operators:
+        - rid: 3301791007918784545
+        - rid: 3301791007918784546
+        - rid: 3301791007918784547
+        - rid: 3301791007918784548
+        - rid: 3301791007918784549
+        history:
+        - rid: 3301791007918784544
+        IsPbrMode: 0
+    - rid: 3301791007918784545
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784546
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - concrete, light damage, grey, hi res
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784547
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791007918784548
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791007918784549
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638592
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: 4b5f532c-7329-47e1-86af-94f72e07ac47
+        Seed: 0
+        m_Operators:
+        - rid: 3301791008854638593
+        - rid: 3301791008854638594
+        history:
+        - rid: 3301791008854638592
+        IsPbrMode: 1
+    - rid: 3301791008854638593
+      type: {class: UpscaleOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: UpscaleOperator
+          version: 0.0.1
+          settings:
+          - a1034b96-cfc8-4021-be9d-7544b25b4704
+          - '{"operators":[{"type":"GenerateOperator","version":"0.0.1","settings":["TextToImage","4"],"enabled":true,"assembly":""},{"type":"PromptOperator","version":"0.0.2","settings":["concrete,
+            light damage, grey, hi res","pattern, blurry, low res"],"enabled":true,"assembly":""},{"type":"LoraOperator","version":"0.0.1","settings":["guid1"],"enabled":false,"assembly":""},{"type":"ReferenceOperator","version":"0.0.2","settings":["","","0","20",""],"enabled":true,"assembly":""},{"type":"MaskOperator","version":"0.0.1","settings":["","True","1"],"enabled":false,"assembly":""}]}'
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638594
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - concrete, light damage, grey, hi res
+          - pattern, blurry, low res
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638595
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: d1f67444-91af-4bf7-ac9c-67444ff3da25
+        Seed: 1818861
+        m_Operators:
+        - rid: 3301791008854638596
+        - rid: 3301791008854638597
+        - rid: 3301791008854638598
+        - rid: 3301791008854638599
+        - rid: 3301791008854638600
+        history:
+        - rid: 3301791008854638595
+        IsPbrMode: 1
+    - rid: 3301791008854638596
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638597
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - marquee background, non-repeating, hi res, no text, off white
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638598
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638599
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638600
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638601
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: ab180666-cf23-4059-803b-fb1bc96d8cd6
+        Seed: 3468265223
+        m_Operators:
+        - rid: 3301791008854638602
+        - rid: 3301791008854638603
+        - rid: 3301791008854638604
+        - rid: 3301791008854638605
+        - rid: 3301791008854638606
+        history:
+        - rid: 3301791008854638601
+        IsPbrMode: 0
+    - rid: 3301791008854638602
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638603
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - marquee background, non-repeating, hi res, no text, off white
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638604
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638605
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638606
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638607
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: c278c901-b68e-413d-a6fb-e91b2203790e
+        Seed: 3012517364
+        m_Operators:
+        - rid: 3301791008854638608
+        - rid: 3301791008854638609
+        - rid: 3301791008854638610
+        - rid: 3301791008854638611
+        - rid: 3301791008854638612
+        history:
+        - rid: 3301791008854638607
+        IsPbrMode: 0
+    - rid: 3301791008854638608
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638609
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - marquee background, non-repeating, hi res, no text, off white
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638610
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638611
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638612
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638613
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: 36d2488d-6a26-49e3-a61e-2bffe597e12f
+        Seed: 1600329243
+        m_Operators:
+        - rid: 3301791008854638614
+        - rid: 3301791008854638615
+        - rid: 3301791008854638616
+        - rid: 3301791008854638617
+        - rid: 3301791008854638618
+        history:
+        - rid: 3301791008854638613
+        IsPbrMode: 0
+    - rid: 3301791008854638614
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638615
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - marquee background, non-repeating, hi res, no text, off white
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638616
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791008854638617
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791008854638618
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
