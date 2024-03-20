@@ -8,20 +8,35 @@ using UnityEngine.SceneManagement;
 
 public class UISandbox : MonoBehaviour
 {
+    [Header("Interface Objects")]
     public GameObject interfacePanel;
-    private int currentButtonStyle = 0;
-    private int currentBackgroundStyle = 0;
-    public GameObject[] buttons;
     public GameObject[] backgrounds;
-    public AudioClip[] melodyTracks;
-    public TMP_Dropdown melodyDropdown;
-    private AudioSource melodyAudioSource;
-    public GameObject melodyJukebox;
     public GameObject carousel;
-    public RectTransform simpleScrollPanelContainer;
-    private GameObject currentButton;
+    public GameObject spearkerCardPanel;
+     private GameObject currentButton;
     private GameObject currentBackground;
+    public RectTransform simpleScrollPanelContainer;
+
+    [Header("UI Elements")]
+    public GameObject[] buttons;
+    public TMP_Dropdown melodyDropdown;
     public TextMeshProUGUI bgButtonText;
+
+    [Header("Melody Jukebox")]
+    public AudioClip[] melodyTracks;
+    public GameObject melodyJukebox;
+
+    private AudioSource melodyAudioSource;
+
+
+    private int currentButtonStyle = 0;
+    private int currentBackgroundStyle = 0;  
+    
+    
+    
+    
+   
+    
 
     // Start is called before the first frame update
     void Start()
@@ -146,6 +161,22 @@ public class UISandbox : MonoBehaviour
             //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
             interfacePanel.SetActive(false);
         }
+    }
+    public void SpeakerCardPanelSwitch()
+    {
+        if(spearkerCardPanel.activeInHierarchy)
+        {
+            spearkerCardPanel.SetActive(false);
+            //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
+            interfacePanel.SetActive(true);
+        }
+        else
+        {
+            spearkerCardPanel.SetActive(true);
+            //simpleScrollPanelContainer.position = new Vector3(0, 0, 0);
+            interfacePanel.SetActive(false);
+        }
+
     }
 
     public void SceneSwitch(int scene)

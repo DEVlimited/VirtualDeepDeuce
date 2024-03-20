@@ -1,0 +1,11 @@
+Some of the Demo Scenes have "Light Probe Group," which is disabled by default because of the Unity bug.
+"Light Probe Group" - can add a nice depth to the objects in the scene by applying bounced lighting from the surroundings.
+
+If you want to use it, unhide the "Light Probe Group" in the Hierarchy. It should automatically bake the lighting data, and you should see the changes immediately. Try it on the "Demo_06."
+
+BUT if you press Play, shadows become completely black, which is a bug!
+To fix that: Go to "Window/Rendering/Lighting Settings."
+Inside the "Scene" tab, disable "Auto Generate," which is located at the very bottom.
+And click on "Generate Lighting" - to generate the lighting data manually.
+
+Now, if you press Play, it should work!
