@@ -19,6 +19,7 @@ public class GuidedBathAvenue : MonoBehaviour
     private bool stopTime = false;
     private int nextViewSwitch;
     private int nextItemSwitch;
+    private int nextSpeakerSwitch;
     public float[] startTimes;
     public float[] endTimes;
 
@@ -26,10 +27,12 @@ public class GuidedBathAvenue : MonoBehaviour
     public Fader fader;
     public GameObject xRRig;
     public ImageResize imageResize;
+    public CsvParser2 parser;
 
 
     private int currentNarrativeClip = 0;
     private int currentView = 0;
+    private int currentSpeaker = 0;
     private float nextEventTime;
     private int eventNumber;
 
@@ -98,6 +101,7 @@ public class GuidedBathAvenue : MonoBehaviour
         if (!stopTime)
         {
             currentTime += Time.deltaTime;
+            EventCheck(currentEventNumber);
         }
         if (stopTime)
         {
@@ -108,17 +112,26 @@ public class GuidedBathAvenue : MonoBehaviour
         timeSinceEventChange += Time.deltaTime;
 
        
-
-        if (currentTime > nextEventTime && eventAvailable)
+        //TODO: delete after testing and ensuring NewEventSwitch() works
+        /* if (currentTime > nextEventTime && eventAvailable)
         {
             EventSwitch();
+        }
+         */
+        //for timing/testing purposes - displays the time since scene start
+        currentTimeText.text = eventNumber + " | " + currentTime;
+    }
+
+    public void EventCheck(int eventNumber)
+    {
+        if(currentTime > nextEventTime && eventAvailable)
+        {
+            NewEventSwitch(eventNumber);
         }
         if(timeSinceEventChange > eventDelay)
         {
             EventCooldown();
         }   
-        //for timing/testing purposes - displays the time since scene start
-        currentTimeText.text = eventNumber + " | " + currentTime;
     }
 
     private void ConsolePrint_performed(InputAction.CallbackContext obj)
@@ -173,6 +186,12 @@ public class GuidedBathAvenue : MonoBehaviour
         {
             //go to specific View using 'destination'
             ItemSwitch(0, eventNumber);
+        }
+        //check if speakerSwitch is needed
+        if(eventNumber == nextSpeakerSwitch)
+        {
+            //go to specific View using 'destination'
+            SpeakerSwitch(0, eventNumber);
         }
         
         currentEventNumber = eventNumber;
@@ -936,6 +955,21 @@ public class GuidedBathAvenue : MonoBehaviour
     {
         ImageSwitch(narrativeImageL, narrativeTexture[currentImage], direction);
         ImageSwitch(narrativeImageR, narrativeTexture[currentImage], direction);
+    }
+    public void SpeakerSwitch(int direction = 1, int destination = 0)
+    {
+         //if there is a desired destination, go there
+            //if not, use direction
+        if(destination == 0)
+        {
+            //go to adjacent speaker using 'direction'
+            currentSpeaker += direction;
+        }
+        else
+        {
+            //go to a specific speaker using 'desitination'
+            currentSpeaker = destination;
+        }
     }
      public void ItemSwitch(int direction = 1, int destination = 0)
     {

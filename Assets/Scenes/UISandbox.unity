@@ -12394,40 +12394,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 534972998}
     m_Modifications:
-    - target: {fileID: 5107997553734880910, guid: aaba184046bb4e6489041d7192d4e4b6,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5107997553734880910, guid: aaba184046bb4e6489041d7192d4e4b6,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7223752870800291359, guid: aaba184046bb4e6489041d7192d4e4b6,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7223752870800291359, guid: aaba184046bb4e6489041d7192d4e4b6,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7223752870800291359, guid: aaba184046bb4e6489041d7192d4e4b6,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -10
-      objectReference: {fileID: 0}
     - target: {fileID: 7521785184077011899, guid: aaba184046bb4e6489041d7192d4e4b6,
         type: 3}
       propertyPath: m_Name
       value: MelodyJukebox
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521785184077011899, guid: aaba184046bb4e6489041d7192d4e4b6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8101778826581397586, guid: aaba184046bb4e6489041d7192d4e4b6,
         type: 3}
