@@ -19,7 +19,7 @@
             {
                 "type": "Unity.Muse.Common.Editor.Settings.PreferenceDataWrapper`1[[Unity.Muse.Common.Account.UsageInfo, Unity.Muse.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], Unity.Muse.Common.Preferences, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
                 "key": "Unity.Muse.Common.Preferences.usage",
-                "value": "{\"m_Value\":{\"value\":{\"rid\":1000}},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"UsageInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"used\":32,\"total\":3000}}]}}"
+                "value": "{\"m_Value\":{\"value\":{\"rid\":1000}},\"references\":{\"version\":2,\"RefIds\":[{\"rid\":1000,\"type\":{\"class\":\"UsageInfo\",\"ns\":\"Unity.Muse.Common.Account\",\"asm\":\"Unity.Muse.Common\"},\"data\":{\"used\":104,\"total\":3000}}]}}"
             }
         ]
     }

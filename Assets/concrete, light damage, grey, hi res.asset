@@ -26,6 +26,10 @@ MonoBehaviour:
   - rid: 3301791029038153734
   - rid: 3301791029038153740
   - rid: 3301791029038153746
+  - rid: 3301791122326814720
+  - rid: 3301791122326814726
+  - rid: 3301791122326814732
+  - rid: 3301791122326814738
   currentMode: TextToImage
   m_Data:
   - rid: 3301791007918784517
@@ -33,23 +37,26 @@ MonoBehaviour:
   - rid: 3301791007918784519
   - rid: 3301791007918784520
   preRefinedArtifact:
-    rid: -2
+    rid: 3301791122326814720
   refinedArtifact:
-    rid: -2
+    rid: 3301791122326814732
   selectedArtifact:
-    rid: 3301791029038153728
+    rid: 3301791122326814732
   m_Operators:
+  - rid: 3301791007918784521
+  - rid: 3301791122326814744
+  - rid: 3301791122326814745
+  - rid: 3301791122326814746
+  - rid: 3301791122326814747
+  m_PreRefineOperators:
   - rid: 3301791007918784521
   - rid: 3301791007918784522
   - rid: 3301791007918784523
   - rid: 3301791007918784524
   - rid: 3301791007918784525
-  m_PreRefineOperators: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 3301791007918784517
       type: {class: FeedbackManager, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
@@ -90,7 +97,7 @@ MonoBehaviour:
           type: PromptOperator
           version: 0.0.2
           settings:
-          - clay shingled rooftop, hi res, no text
+          - round coca cola sign
           - pattern, blurry, low res
           enabled: 1
           assembly: 
@@ -112,7 +119,7 @@ MonoBehaviour:
           version: 0.0.2
           settings:
           - 
-          - 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ApPTK5/AcAHn/3kEBoBzH48SIECAAIElBQwAS8aqKQIECBAgcC5gADj38SgBAgQIEFhSwACwZKyaIkBgVoHtmhUXAM6a3lx1GwDmyku1BAgQIECgiYABoAmjgxAgQIAAgbkEDABz5aVaAgQIECDQRMAA0ITRQQgQIECAwFwCBoC58lItAQIECBBoImAAaMLoIAQIECBAYC4BA8BceamWAAECBAg0ETAANGF0EAIECLQR8O/Xt3F0lNcCBoDXRp5BgAABAgSWEzAALBephggQIECAwGsBA8BrI88gQIBAmIB/CjiMuvxCBoDyWwAAAQIECFQUMABUTF3PBAikFXARYNpolivMALBcpBoiQIAAAQKvBQwAr408gwABAgQILCdgAFguUg0RIECAAIHXAgaA10aeQYAAgTABnwIIoy6/kAGg/BYAQIAAAQIVBQwAFVPXMwECBAiUFzAAlN8CawP4cera+eqOAIG/FzAA/L2d75xAwGeqJwhJiQQIDBG4DVm146Ir/Y1vpV46Rv700Jvf9rUNAb4IzCLwe2i1f68lt5/vv589q1+v1/+j0+34m99wM/7+ePLMGvzufuxlv8+v1wVm9lvtvLyeWrtnrnD+bxr2wrU98Sjvme16vX4dnf4fTQ2WMCYK93IAAAAASUVORK5CYII=
+          - 
           - 1
           - 16
           - 
@@ -1017,6 +1024,341 @@ MonoBehaviour:
           enabled: 1
           assembly: 
     - rid: 3301791029038153751
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814720
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: d2fef67b-763b-4888-8a4f-49ca46eacfc2
+        Seed: 1595135916
+        m_Operators:
+        - rid: 3301791122326814721
+        - rid: 3301791122326814722
+        - rid: 3301791122326814723
+        - rid: 3301791122326814724
+        - rid: 3301791122326814725
+        history:
+        - rid: 3301791122326814720
+        IsPbrMode: 0
+    - rid: 3301791122326814721
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814722
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - round coca cola sign
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814723
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814724
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 1
+          - 16
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814725
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814726
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: b64f1097-87fb-42e0-a79c-591f7ff8a9f3
+        Seed: 3708272192
+        m_Operators:
+        - rid: 3301791122326814727
+        - rid: 3301791122326814728
+        - rid: 3301791122326814729
+        - rid: 3301791122326814730
+        - rid: 3301791122326814731
+        history:
+        - rid: 3301791122326814726
+        IsPbrMode: 0
+    - rid: 3301791122326814727
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814728
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - round coca cola sign
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814729
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814730
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 1
+          - 16
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814731
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814732
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: 60404817-2f5d-4838-9e34-cb3e62308b49
+        Seed: 3412504651
+        m_Operators:
+        - rid: 3301791122326814733
+        - rid: 3301791122326814734
+        - rid: 3301791122326814735
+        - rid: 3301791122326814736
+        - rid: 3301791122326814737
+        history:
+        - rid: 3301791122326814732
+        IsPbrMode: 1
+    - rid: 3301791122326814733
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814734
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - round coca cola sign
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814735
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814736
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 1
+          - 16
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814737
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814738
+      type: {class: ImageArtifact, ns: Unity.Muse.Texture, asm: Unity.Muse.Texture}
+      data:
+        Guid: 896cbb59-4c8d-4afa-989f-fe109e2f79f3
+        Seed: 1691663949
+        m_Operators:
+        - rid: 3301791122326814739
+        - rid: 3301791122326814740
+        - rid: 3301791122326814741
+        - rid: 3301791122326814742
+        - rid: 3301791122326814743
+        history:
+        - rid: 3301791122326814738
+        IsPbrMode: 0
+    - rid: 3301791122326814739
+      type: {class: GenerateOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: GenerateOperator
+          version: 0.0.1
+          settings:
+          - TextToImage
+          - 4
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814740
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - round coca cola sign
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814741
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814742
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 1
+          - 16
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814743
+      type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: MaskOperator
+          version: 0.0.1
+          settings:
+          - 
+          - True
+          - 1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814744
+      type: {class: PromptOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: PromptOperator
+          version: 0.0.2
+          settings:
+          - round coca cola sign
+          - pattern, blurry, low res
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814745
+      type: {class: LoraOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: LoraOperator
+          version: 0.0.1
+          settings:
+          - guid1
+          enabled: 0
+          assembly: 
+    - rid: 3301791122326814746
+      type: {class: ReferenceOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
+      data:
+        m_OperatorData:
+          type: ReferenceOperator
+          version: 0.0.2
+          settings:
+          - 
+          - 
+          - 0
+          - 20
+          - 
+          enabled: 1
+          assembly: 
+    - rid: 3301791122326814747
       type: {class: MaskOperator, ns: Unity.Muse.Common, asm: Unity.Muse.Common}
       data:
         m_OperatorData:
