@@ -1,7 +1,7 @@
-# Virtual Deep Deuce - A VR recreation of the Deep Deuce neighborhood of Oklahoma city circa 1950       
+# Virtual Fairgrounds - A VR recreation of the Fairgrounds neighborhood of Oklahoma city circa 1950       
 ![MuralLogo](https://github.com/DEVlimited/VirtualDeepDeuce/assets/37113385/e679d860-958c-4960-9754-7434b4b27a41)
-At the heart of the Virtual Deep Deuce project lies a profound commitment to preserving the
-essence of Oklahoma City's historic Deep Deuce District, an area once teeming with life and culture,
+At the heart of the Virtual Fairgrounds project lies a profound commitment to preserving the
+essence of Oklahoma City's historic Fairgrounds District, an area once teeming with life and culture,
 now remembered only through scattered narratives and memories. This initiative leverages
 immersive virtual reality technology platforms designed by Drone’s Eye View (DEV) to resurrect a
 neighborhood once vibrant with culture and community, but lost to the tides of urban renewal. The project, inspired by the visionary guidance of
