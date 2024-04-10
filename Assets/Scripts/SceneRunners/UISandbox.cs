@@ -52,7 +52,7 @@ public class UISandbox : MonoBehaviour
         melodyDropdown.ClearOptions();  
         //create list to store them titles in
         List<TMP_Dropdown.OptionData> titleList = new List<TMP_Dropdown.OptionData>();
-        //pull drop down options from audiofiles titles in folder and add them to the list
+        //pull drop down options from audiofiles titles in array and add them to the list
         for (int i = 0; i < melodyTracks.Length; i++)
         {
             var newOption = new TMP_Dropdown.OptionData();
