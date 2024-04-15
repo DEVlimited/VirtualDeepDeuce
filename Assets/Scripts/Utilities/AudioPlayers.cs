@@ -6,7 +6,7 @@ using TMPro;
 public class AudioPlayers : MonoBehaviour
 {
     public TMP_Dropdown dropdown;
-    protected AudioSource audioSource;
+    public AudioSource audioSource;
     public AudioClip[] clips;
   
     void Start()

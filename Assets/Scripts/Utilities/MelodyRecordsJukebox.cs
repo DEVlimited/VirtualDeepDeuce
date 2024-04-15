@@ -10,8 +10,6 @@ public class MelodyRecordsJukebox : AudioPlayers
     // Start is called before the first frame update
     void Start()
     {
-        //set AudioSource
-        audioSource = GetComponent<AudioSource>();
         //clear any options stored in the dropdown
         dropdown.ClearOptions(); 
         //create list to store them titles in
