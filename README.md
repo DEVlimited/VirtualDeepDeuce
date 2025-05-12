@@ -11,6 +11,10 @@ virtual environment, DEV aims to offer an immersive educational experience that 
 district's legacy. The urgency of this mission is underscored by the dwindling number of individuals
 who experienced Deep Deuce firsthand, making this project a crucial bridge between past and
 present generations.
+
+## Other Versions
+- [Browser-based version](https://github.com/DEVlimited/virtual-fairgrounds-web)
+
 ## Install Instructions
 ### PCVR
 Download the PCVR version from the releases page. Extract the program and run it. Should work on most major headsets with a powerful enough GPU. 
